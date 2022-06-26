@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Details</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
+<%- include('../partials/header') %>
 <body>
 
     <section id="show-page">
@@ -55,7 +57,7 @@
           </tbody>
         </table>
 
-<a href="/<%= flight._id %>/tickets/new">Add New Ticket</a>
+        <a href="/flights/<%= flight._id %>/tickets/new">Add New Ticket</a>
 
 
 

@@ -30,7 +30,8 @@ const flightSchema = new Schema({
     max: 9999
   },
   departs: {
-    type: Date
+    type: Date,
+    default: new Date()
   },
   destinations: [destinationSchema],
   passengers: [{type: Schema.Types.ObjectId, ref: 'Ticket'}]
