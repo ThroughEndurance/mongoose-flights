@@ -21,9 +21,25 @@
         <div><%= flight.departs %></div>
         <div> Tickets:</div>
         <ul>
-          <%- flight.passengers.map(p => 
-            `<li>${p.seat} ${p.price} ${p.flight}</li>`
-          ).join('') %>
+
+
+
+
+          <div class="row font-weight-bold justify-content-center">
+            <h4>Ticket(s)</h4>
+          </div>
+          <div class="row justify-content-center">
+
+              <% attachedTickets.forEach(function (t) { %>
+
+                  <button type="button" disabled value="<%= t.id %>"><%= t.seat %>
+
+            <% }); %>
+                  
+
+          </div>
+        
+          
         </ul>
 
       </section>

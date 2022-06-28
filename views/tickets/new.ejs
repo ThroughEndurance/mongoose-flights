@@ -12,12 +12,13 @@
 <body>
     <h2>Enter a New Ticket</h2>
 
-    <form id="add-ticket-form" action="/tickets" method="POST">
+    <form id="add-ticket-form" action="/flights/<%= flight._id %>/" method="POST">
       <label>Seat: </label>
-      <input type="text" name="seat">
+      <input type="text" name="seat" required pattern="[A-F][1-9]\d?">
       <label>Price: </label>
       <input type="number" name="price">
-      <label></label>
+      <label>submit</label>
+      <input type="submit" value="Add Ticket">
 
     </form>
     

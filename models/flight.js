@@ -8,7 +8,8 @@ const destinationSchema = new Schema({
     enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
   },
   arrival: {
-    type: Date
+    type: Date,
+    default: () => new Date(+new Date() + 730*24*60*60*1000)
   }
 }, {
   timestamps: true
@@ -31,11 +32,9 @@ const flightSchema = new Schema({
   },
   departs: {
     type: Date,
-    default: function() {
-      return new Date().getFullYear() + 1}
+    default: () => new Date(+new Date() + 730*24*60*60*1000)
   },
   destinations: [destinationSchema],
-  passengers: [{type: Schema.Types.ObjectId, ref: 'Ticket'}]
 }, {
   timestamps: true
 });
